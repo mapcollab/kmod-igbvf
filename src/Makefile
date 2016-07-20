@@ -44,7 +44,8 @@ DRIVER_NAME = igbvf
 
 # Kernel Search Path
 # All the places we look for kernel source
-KSP :=  /lib/modules/$(BUILD_KERNEL)/build \
+KSP :=  $(KERNEL_SRC) \
+        /lib/modules/$(BUILD_KERNEL)/build \
         /lib/modules/$(BUILD_KERNEL)/source \
         /usr/src/linux-$(BUILD_KERNEL) \
         /usr/src/linux-$($(BUILD_KERNEL) | sed 's/-.*//') \
