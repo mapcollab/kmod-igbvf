@@ -43,9 +43,9 @@ EOF
 make -C src KERNEL_SRC=%{_usrsrc}/kernels/%{kversion}
 
 %install
-%{__install} -d %{buildroot}/lib/modules/%{kversion}/updates/drivers/net/ethernet/intel/%{kmod_name}/
+%{__install} -d %{buildroot}/lib/modules/%{kversion}/drivers/net/ethernet/intel/%{kmod_name}/
 %{__install} -d %{buildroot}%{_sysconfdir}/sysconfig/modules/
-%{__install} src/%{kmod_name}.ko %{buildroot}/lib/modules/%{kversion}/updates/drivers/net/ethernet/intel/%{kmod_name}/
+%{__install} src/%{kmod_name}.ko %{buildroot}/lib/modules/%{kversion}/drivers/net/ethernet/intel/%{kmod_name}/
 %{__install} kmod-%{kmod_name}.modules %{buildroot}%{_sysconfdir}/sysconfig/modules/
 
 # Sign the modules(s).
@@ -65,7 +65,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%attr(0755,root,root) /lib/modules/%(echo %{kversion})/updates/drivers/net/ethernet/intel/%{kmod_name}/%{kmod_name}.ko
+%attr(0755,root,root) /lib/modules/%(echo %{kversion})/drivers/net/ethernet/intel/%{kmod_name}/%{kmod_name}.ko
 %attr(0755,root,root) %{_sysconfdir}/sysconfig/modules/kmod-%{kmod_name}.modules
 
 %changelog
