@@ -2409,7 +2409,9 @@ static int igbvf_xmit_frame_ring_adv(struct sk_buff *skb,
 			   igbvf_tx_map_adv(adapter, tx_ring, skb, first),
 			   skb->len, hdr_len);
 
+#ifndef HAVE_TRANS_START_IN_QUEUE
 	netdev->trans_start = jiffies;
+#endif
 
 	/* Make sure there is space in the ring for the next send. */
 	igbvf_maybe_stop_tx(netdev, MAX_SKB_FRAGS + 4);
