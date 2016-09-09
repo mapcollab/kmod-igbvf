@@ -2,7 +2,7 @@
 Name: kmod-%{kmod_name}
 Summary: Intel(R) 82576 Virtual Function
 Version: 2.3.8.2
-Release: 1
+Release: 2
 Source: %{name}-%{version}.tar.gz
 Vendor: Intel Corporation
 License: GPL
@@ -69,6 +69,11 @@ rm -rf %{buildroot}
 %attr(0755,root,root) %{_sysconfdir}/sysconfig/modules/kmod-%{kmod_name}.modules
 
 %changelog
+* Fri Sep 09 2016 Michal Gawlik <michal.gawlik@thalesgroup.com> 2.3.8.2-2
+- tito: switch to release tagger (3rd-party project)
+  (michal.gawlik@thalesgroup.com)
+- Compilation fix for kernel 4.7 (michal.gawlik@thalesgroup.com)
+
 * Wed Jul 20 2016 Tomasz Rostanski <tomasz.rostanski@thalesgroup.com> 2.3.8.2-1
 - new package built with tito
 
