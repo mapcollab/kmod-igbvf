@@ -2,7 +2,7 @@
 Name: kmod-%{kmod_name}
 Summary: Intel(R) 82576 Virtual Function
 Version: 2.3.8.2
-Release: 2
+Release: 2%{?kpkgversion:%(echo .%{kpkgversion} | tr - _)}
 Source: %{name}-%{version}.tar.gz
 Vendor: Intel Corporation
 License: GPL
