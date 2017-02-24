@@ -2,7 +2,7 @@
 Name: kmod-%{kmod_name}
 Summary: Intel(R) 82576 Virtual Function
 Version: 2.3.8.2
-Release: 2%{?kpkgversion:%(echo .%{kpkgversion} | tr - _)}
+Release: 3%{?kpkgversion:%(echo .%{kpkgversion} | tr - _)}
 Source: %{name}-%{version}.tar.gz
 Vendor: Intel Corporation
 License: GPL
@@ -61,6 +61,10 @@ rm -rf %{buildroot}
 %attr(0755,root,root) /lib/modules/%(echo %{kversion})/drivers/net/ethernet/intel/%{kmod_name}/%{kmod_name}.ko
 
 %changelog
+* Fri Feb 24 2017 Michal Gawlik <michal.gawlik@thalesgroup.com> 2.3.8.2-3
+- spec: remove old method of module autoloading (michal.gawlik@thalesgroup.com)
+- spec: add used kernel version (michal.gawlik@thalesgroup.com)
+
 * Fri Sep 09 2016 Michal Gawlik <michal.gawlik@thalesgroup.com> 2.3.8.2-2
 - tito: switch to release tagger (3rd-party project)
   (michal.gawlik@thalesgroup.com)
